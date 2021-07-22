@@ -35,36 +35,38 @@ They include;
 
 To give you an immediate idea of the way `pText` works, this is the classic `Hello World` example, in `pText`:
 
-    from pathlib import Path
+```python
+from pathlib import Path
 
-    from ptext.pdf.canvas.layout.page_layout import SingleColumnLayout
-    from ptext.pdf.canvas.layout.text.paragraph import Paragraph,
-    from ptext.pdf.document import Document
-    from ptext.pdf.page.page import Page
-    from ptext.pdf.pdf import PDF
+from ptext.pdf.canvas.layout.page_layout import SingleColumnLayout
+from ptext.pdf.canvas.layout.text.paragraph import Paragraph
+from ptext.pdf.document import Document
+from ptext.pdf.page.page import Page
+from ptext.pdf.pdf import PDF
 
-    # create an empty Document
-    pdf = Document()
+# create an empty Document
+pdf = Document()
 
-    # add an empty Page
-    page = Page()
-    pdf.append_page(page)
+# add an empty Page
+page = Page()
+pdf.append_page(page)
 
-    # use a PageLayout (SingleColumnLayout in this case)
-    layout = SingleColumnLayout(page)
+# use a PageLayout (SingleColumnLayout in this case)
+layout = SingleColumnLayout(page)
 
-    # add a Paragraph object
-    layout.add(Paragraph("Hello World!"))
-    
-    # store the PDF
-    with open(Path("output.pdf"), "wb") as pdf_file_handle:
-        PDF.dumps(pdf_file_handle, pdf)
+# add a Paragraph object
+layout.add(Paragraph("Hello World!"))
+
+# store the PDF
+with open(Path("output.pdf"), "wb") as pdf_file_handle:
+    PDF.dumps(pdf_file_handle, pdf)
+```
  
 ## 2. License
 
 pText is dual licensed as AGPL/Commercial software.
 
-AGPL is a free / open source software license.
+AGPL is a free/open source software license.
 This doesn't mean the software is [gratis](https://en.wikipedia.org/wiki/Gratis_versus_libre)!
 
 Buying a license is mandatory as soon as you develop commercial activities distributing the pText software inside your product or deploying it on a network without disclosing the source code of your own applications under the AGPL license. 
@@ -78,6 +80,6 @@ Contact sales for more info.
 
 ## 3. Acknowledgements
 
-I would like to thank the following people, for their contributions / advice with regards to developing `pText`:
+I would like to thank the following people, for their contributions/advice with regards to developing `pText`:
 - Benoît Lagae
 - Michael Klink
